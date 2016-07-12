@@ -121,6 +121,7 @@ namespace InstaSharp
                 code.UrlEncode());
 
             request.Content = new StringContent(myParameters);
+            request.Content.Headers.ContentType.MediaType = "application/x-www-form-urlencoded";
 
             return client.ExecuteAsync<OAuthResponse>(request);
 
